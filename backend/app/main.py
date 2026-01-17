@@ -2,13 +2,10 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.cors import CORSMiddleware
-
 
 from app.core.config import settings
-from app.db import create_db_and_tables
+from app.db import create_db_and_tables, get_session
 from app.routes import health, auth, products, checkout, orders
-from app.db import get_session
 
 
 @asynccontextmanager
@@ -16,7 +13,6 @@ async def lifespan(app: FastAPI):
     create_db_and_tables()
 
     # Seed productos demo (solo si DB vacía)
-    # OJO: esto es para que el frontend tenga algo que mostrar desde el minuto 1.
     session_gen = get_session()
     session = next(session_gen)
     try:
@@ -31,24 +27,19 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
-origins = [
+
+
+ALLOWED_ORIGINS = [
     "https://web-systems-ecommerce.vercel.app",
+    "http://localhost:5173",  
+    "http://127.0.0.1:5173",
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=ALLOWED_ORIGINS,
     allow_origin_regex=r"^https://.*\.vercel\.app$",
-    allow_credentials=False,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=list(settings.CORS_ORIGINS),
-    allow_credentials=True,
+    allow_credentials=False,   
     allow_methods=["*"],
     allow_headers=["*"],
 )
