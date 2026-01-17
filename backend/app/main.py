@@ -37,12 +37,13 @@ ALLOWED_ORIGINS = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=list(settings.CORS_ORIGINS),
     allow_origin_regex=r"^https://.*\.vercel\.app$",
-    allow_credentials=False,   
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 app.include_router(health.router)
 app.include_router(auth.router)

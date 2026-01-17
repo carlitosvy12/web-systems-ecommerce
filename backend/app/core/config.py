@@ -15,7 +15,12 @@ class Settings:
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24  # 24h
 
-    CORS_ORIGINS: list[str] = tuple(_parse_origins(os.getenv("CORS_ORIGINS")))
+    # Front local (Vite) + Front prod (Vercel)
+    CORS_ORIGINS: list[str] = (
+        "http://localhost:5173",
+        "https://web-systems-ecommerce.vercel.app",
+    )
+
 
 
 settings = Settings()
