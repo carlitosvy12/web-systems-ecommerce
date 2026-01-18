@@ -12,6 +12,8 @@ The application is deployed and available online at the following URLs:
                 web-systems-ecommerce-5n0iu4953-carlitosvy12s-projects.vercel.app  
 - **Backend:** https://ecommerce-backend-l9dy.onrender.com 
 
+-**Github** https://github.com/carlitosvy12/web-systems-ecommerce
+
 
 
 
@@ -31,13 +33,13 @@ Commands:
 cd backend
 python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+pip install "fastapi[standard]"
 fastapi dev app/main.py
 
 ### Frontend
 
 Commands:
-cd ecommerce
+cd frontend/ecommerce
 yarn install
 yarn dev
 
