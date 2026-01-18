@@ -22,7 +22,7 @@ export default function ProductCard({ p }: { p: ProductPublic }) {
 
   return (
     <div className="card">
-      <img className="productImg" src="/product.jpg" alt={p.title} />
+      <img className="productImg" src="/product.png" alt={p.title} />
 
       <div className="cardTitle">
         <Link to={`/product/${p.slug}`}>{p.title}</Link>

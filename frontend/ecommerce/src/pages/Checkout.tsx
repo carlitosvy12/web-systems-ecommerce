@@ -36,7 +36,7 @@ export default function Checkout() {
         setLoading(false);
       }
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   const allOk = valid?.items.every((x) => x.ok) ?? false;

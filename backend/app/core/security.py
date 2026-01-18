@@ -36,6 +36,6 @@ def get_user_from_token(session: Session, token: str) -> User | None:
     except JWTError:
         return None
 
-    # sub = email
+    
     stmt = select(User).where(User.email == sub)
     return session.exec(stmt).first()

@@ -1,6 +1,4 @@
-/* =========================
-   RESET BÁSICO
-========================= */
+
 * {
   box-sizing: border-box;
 }
@@ -21,9 +19,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* =========================
-   LAYOUT GENERAL
-========================= */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -34,9 +29,6 @@ main {
   min-height: calc(100vh - 140px);
 }
 
-/* =========================
-   HEADER / NAVBAR
-========================= */
 .header {
   background-color: #121f39;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -68,9 +60,6 @@ main {
   opacity: 1;
 }
 
-/* =========================
-   TÍTULOS
-========================= */
 h1 {
   font-size: 32px;
   margin-bottom: 20px;
@@ -81,9 +70,6 @@ h2 {
   margin-bottom: 16px;
 }
 
-/* =========================
-   BUSCADOR
-========================= */
 .searchRow {
   display: flex;
   gap: 10px;
@@ -117,9 +103,6 @@ button:hover {
   filter: brightness(1.1);
 }
 
-/* =========================
-   GRID DE PRODUCTOS
-========================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -138,9 +121,6 @@ button:hover {
   }
 }
 
-/* =========================
-   CARD DE PRODUCTO
-========================= */
 .card {
   background-color: #121f39;
   border-radius: 16px;
@@ -178,9 +158,6 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* =========================
-   FILAS / BOTONES CARD
-========================= */
 .row {
   display: flex;
   justify-content: space-between;
@@ -201,9 +178,6 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* =========================
-   AUTH (LOGIN / REGISTER)
-========================= */
 .authBox {
   max-width: 420px;
   margin: 40px auto;
@@ -225,9 +199,6 @@ label {
   gap: 6px;
 }
 
-/* =========================
-   TABLAS (CART / ORDERS)
-========================= */
 .table {
   background-color: #121f39;
   border-radius: 16px;
@@ -254,9 +225,6 @@ label {
   }
 }
 
-/* =========================
-   FOOTER
-========================= */
 .footer {
   margin-top: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);

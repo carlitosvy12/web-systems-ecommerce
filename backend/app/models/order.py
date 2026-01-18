@@ -3,7 +3,7 @@ from sqlmodel import SQLModel, Field
 
 
 class OrderBase(SQLModel):
-    status: str = "pending"  # "pending", "paid", "cancelled"
+    status: str = "pending"  
     total_cents: int
     currency: str = "USD"
 

@@ -11,7 +11,7 @@ if DATABASE_URL:
     # Postgres (Supabase)
     engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 else:
-    # SQLite local (para desarrollo)
+    # SQLite local 
     sqlite_file_path = BASE_DIR / "database.db"
     sqlite_url = f"sqlite:///{sqlite_file_path}"
     connect_args = {"check_same_thread": False}
@@ -19,7 +19,7 @@ else:
 
 
 def create_db_and_tables() -> None:
-    from app.models import user, product, order, order_item  # noqa: F401
+    from app.models import user, product, order, order_item 
     SQLModel.metadata.create_all(engine)
 
 

@@ -19,7 +19,7 @@ def list_products(
 
     if q:
         q_like = f"%{q.lower()}%"
-        # SQLModel/SQLAlchemy: usamos .like sobre columnas
+        
         stmt = stmt.where((Product.title.ilike(q_like)) | (Product.description.ilike(q_like)))
 
     stmt = stmt.offset(skip).limit(limit)

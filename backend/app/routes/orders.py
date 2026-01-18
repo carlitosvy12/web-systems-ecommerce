@@ -40,7 +40,7 @@ def create_order(payload: list[CartItemIn], session: SessionDep, authorization: 
     products = session.exec(select(Product).where(Product.id.in_(ids))).all()
     by_id = {p.id: p for p in products}
 
-    # Validación fuerte
+    
     currency = None
     total = 0
     for item in payload:
@@ -57,7 +57,7 @@ def create_order(payload: list[CartItemIn], session: SessionDep, authorization: 
 
     now = datetime.utcnow()
 
-    # Transacción: crea order + items + descuenta stock
+    
     try:
         order = Order(
             user_id=user.id,
